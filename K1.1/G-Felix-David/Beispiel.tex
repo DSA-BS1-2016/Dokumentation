@@ -1,5 +1,5 @@
 Dies ist ein Beispiel der Anwendung des Gaußalgorithmus.
-Wir nehmen als  Ausgangsmatrix die $m\times n$ Matrix 
+Wir nehmen als  Ausgangsmatrix die $m\times n$ Matrix $A$ welch zur $m \times n$ Matrix $\tilde{A}$  
 \begin{eqnarray*}
 A&=&\begin{pmatrix}
 0 & 0 & 1 & 2 & 9 \\ 
@@ -38,4 +38,4 @@ A&=&\begin{pmatrix}
  \end{eqnarray*}
  
  Im ersten Schritt wurden die erste und zweite Zeile vertauscht um den ersten Pivot zu erhalten.
- Danach wurden zu der dritten und vierten Zeile Vielfache der ersten addiert was die Einträge $a_{3,2}$ und $a_{4,2}$ eliminierte.Der Gauß Algorithmus wurde erneut an der Matrix $A_2=A_{2-3,3-5}$ ausgeführt. 
+ Danach wurden zu der dritten und vierten Zeile Vielfache der ersten addiert, was die Einträge $a_{3,2}$ und $a_{4,2}$ eliminierte. Der Gauß-Algorithmus wurde nun erneut an der Matrix $A_2=A_{2-3,3-5}$ ausgeführt wodurch man die vierte Matrix erhält, in welcher nur noch die dritte und vierte Zeile Vertauscht werden müssen um Matrix $\tilde{A}$ in ZSF zu erhalten.
