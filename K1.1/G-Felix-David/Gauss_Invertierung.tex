@@ -1,0 +1,17 @@
+Nebst seinen vielen Anwendungen zur Restrukturierung von Matrizen in eine Zeilen-Stufen-Form kann der Gauss-Algorithmus auch verwendet werden, um die Inverse einer quadratischen Matrix $M$ zu berechnen.
+Dies ist folgendermaßen möglich:
+
+\begin{itemize}
+\item Man definiere zuerst eine neue Matrix $A$ folgendermaßen:
+$A = (M|E_m)$
+\item Diese neu definierte Matrix wird nun mithilfe des Gauss-Algorithmus so umgeformt, dass am Anfang der Matrix eine Einheitsmatrix $E_m$ steht.
+\begin{itemize}
+\item Ist dies nicht möglich, so kann die Matrix $M$ nicht invertiert werden.
+\end{itemize}
+\item Die neue Matrix $A_{\tiny Ergebnis}$ ist nun folgendermaßen aufgebaut: $A_{\tiny Ergebnis} = (E_m|M^{-1})$
+\end{itemize}
+Entfernt man nun die ersten $m$ Spalten der Matrix $A_{\tiny Ergebnis}$, so ist die verbleibende Matrix $A_{\tiny Schnitt}$ gleich der Inversen der Matrix $M$, d.h. $M^{-1}$
+
+\begin{Bew}
+
+\end{Bew}
