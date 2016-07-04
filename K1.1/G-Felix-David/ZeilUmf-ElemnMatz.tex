@@ -24,14 +24,14 @@ Um jedoch eben jene Matrizen zu definieren, muss zuerst die Matrix $E^i_j$ defin
 \end{Def}
 
 % Raggedright um linksbündig zu bleiben
-\raggedright Nun lassen sich die verschiedenen Zeilenumformungen folgendermaßen definieren:
+\hspace{2pt}
 
+\raggedright Nun lassen sich die verschiedenen Zeilenumformungen folgendermaßen definieren:
 \subsubsection{Zeilenaddition $Q^i_j(\lambda)$}
 Bei der Zeilenaddition wird zur Zeile i die Zeile j mit Vorfaktor $\lambda$ hinzugefügt.
 Die dazugehörige Matrix $Q^i_j(\lambda)$ ist folgendermaßen definiert:
 \begin{Def} Zeilenaddition:
 \begin{eqnarray}
-	M_T &=& M \cdot Q^i_j(\lambda) \\
 	Q^i_j(\lambda) & = & E_m + \lambda \cdot E^i_j \\
 	Q^i_j(\lambda) & = & 
 	\begin{pmatrix}
@@ -41,27 +41,28 @@ Die dazugehörige Matrix $Q^i_j(\lambda)$ ist folgendermaßen definiert:
 	\end{pmatrix} 
 \end{eqnarray}
 \end{Def}
+\raggedright
+Um nun diese Transformationsmatrix auf eine Matrix M anzuwenden, muss sie von links mit M multipliziert werden, schreibe: $M_{\small Ergebnis} = M \cdot Q^i_j(\lambda)$
 
 \subsubsection{Zeilenmultiplikation $S^i(\lambda)$}
 Bei der Zeilenmultiplikation wird die Zeile i in M mit dem Faktor $\lambda$ multipliziert. Andere Zeilen werden hierbei nicht verändert. Die dazugehörige Matrix $S^i(\lambda)$ ist folgendermaßen definiert:
 \begin{Def}
 \begin{eqnarray}
-	M_T &=& M \cdot S^i(\lambda) \\
 	S^i(\lambda) &=& E_m + (\lambda - 1) \cdot E^i_i \\
 	S^i(\lambda) &=& 
 	\begin{pmatrix}
 	1 & \cdots & 0 \\ 
-	\vdots & \lambda & \vdots \\ 
+	\vdots & s^i_i = \lambda & \vdots \\ 
 	0 & \cdots & 1
 	\end{pmatrix} 
 \end{eqnarray}
 \end{Def}
+\raggedright Um nun diese Transformationsmatrix auf die Matrix M anzuwenden muss sie, wie bekannt, von links mit M multipliziert werden: $M_{\small Ergebnis} = M \cdot S^i(\lambda)$
 
 \subsubsection{Zeilenvertauschung $P^i_j$}
 Bei der Zeilenvertauschung werden die Zeilen i und j miteinander vertauscht. Die daraus entstehende Matrix enthält noch beide Zeilen wie zuvor, jedoch an anderen Positionen. Die dazugehörige Matrix $P^i_j$ ist folgendermaßen definiert:
 \begin{Def} Zeilenvertauschung:
 \begin{eqnarray}
-	M_T &=& M \cdot P_j^i(\lambda) \\
 	P_j^i(\lambda) &=& E_m - E^i_i - E^j_j + E^j_i + E^i_j \\
 	P^i_j &=& 
 	\begin{pmatrix}
@@ -72,3 +73,4 @@ Bei der Zeilenvertauschung werden die Zeilen i und j miteinander vertauscht. Die
 	\end{pmatrix} 
 \end{eqnarray}
 \end{Def}
+\raggedright Wie bereits bekannt muss diese Transformationsmatrix von links mit M multipliziert werden, um das Ergebnis zu bekommen: $M_{\small Ergebnis} = M \cdot P^i_j$
