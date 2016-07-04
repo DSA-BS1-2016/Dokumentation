@@ -1,0 +1,20 @@
+\subsubsection{Der Gauß-Algorithmus allgemein formuliert}
+\begin{Algo} Der Gauß-Algorithmus ist eine Reihe von Anweisungen welche nacheinander ausgeführt werden können um eine beliebige Matrix in Zeilenstufenform zu bringen.
+	\begin{itemize}
+		\item[Input:] $m \times n $ Matrix A , $a_j$ ist die $j$-te Spalte
+		\item[Output:] $\tilde{A}$ in Zeilenstufenform (ZSF)
+	\end{itemize}
+\end{Algo}	
+	\begin{enumerate}
+		\item Zuerst wird geprüft ob die Matrix leer ist also ob $A=0$. Ist dies der Fall so ist Matrix  $A$ bereits in ZSF.
+		\item Nun wird die Zählvariable $j$ auf $j=1$ gesetzt.
+		\item Wenn die $j$-te Spalte leer ist also $a_j=0$ dann wird $j$ um eins erhöht $j+1\rightarrow j$ und dieser Schritt wiederholt.
+		\item $k$ wird definiert als der erste Eintrag in der $a_j$-ten Spalte welcher ungleich Null ist $k:=min\{i|a_{ij}\neq0\}$.
+		\item Ist nun $k\neq1$ so muss die $k$-te Zeile mit der ersten vertauscht werden um im nächsten Schritt fortzufahren zu können.
+		\item Da $k\neq0$ ist es nun möglich mithilfe der Zeilenaddition und dem Faktor $\lambda=\frac{-a_{ij}}{\bar{a}_{1j}}$ alle Einträge unter $a_1j$ in Zeilen $2\leq{i}\leq{m}$
+		zu eliminieren.
+		\item Hiernach werden die Schritte 1 bis 6 mit der Untermatrix $A_2:=(a_{pq})_{\substack{2\leq p\leq m\\ j+1 \leq q \leq n}}$ wiederholt solange $m>1 \wedge n>1$
+		\item $A$ ist in ZSF 
+	\end{enumerate}
+\subsubsection{Terminierung des Gauß-Algorithmus}
+	Der Gauß-Algorithmus terminiert auf jeden Fall da mit jedem Durchlauf $m$ und $n$ abnehmen und streng monoton fallend sind und da die $m \times n$ Matrix $A$ endlich groß ist. 
