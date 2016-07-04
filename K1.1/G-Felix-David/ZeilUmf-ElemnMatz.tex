@@ -9,15 +9,36 @@ Für den Gauss-Algorithmus sind einige basische Zeilenumformungen innerhalb eine
 
 Um dieser verschiedenen Operationen auszuführen lässt sich die Matrix-Matrix-Multiplikation anwenden. Hierfür lassen sich diverse Matrizen definieren.
 Um jedoch eben jene Matrizen zu definieren, muss zuerst die Matrix $E^i_j$ definiert werden als:
-\begin{Def}
-\[ E &=& \]
+
+\begin{Def} Elementarmatrix $E^i_j$
+\begin{eqnarray}
+	E^i_j &=& m \times m \\
+ 	E^i_j &=& 
+	 	\begin{Bmatrix}
+	 	0 & \cdots & 0 \\
+	 	\vdots & e^i_j = 1 & \vdots \\
+	 	0 & \cdots & 0 
+ 	\end{Bmatrix}
+\end{eqnarray}
 \end{Def}
 
-\begin{Def} Zeilenvertauschung:
+Nun lassen sich die verschiedenen Zeilenumformungen folgendermaßen definieren:
 
+\begin{Def} Zeilenvertauschung:
 \begin{eqnarray}
 	M_T &=& M \cdot P_j^i(\lambda) \\
-	P_j^i(\lambda) &=& E
+	P_j^i(\lambda) &=& E_m - E^i_i - E^j_j + E^j_i + E^i_j \\
+	P^i_j &=& \begin{bmatrix}
+	1 & \cdots & \cdots & 0 \\ 
+	\vdots & E^i_i = 0 & E^i_j = 1 &  \\ 
+	\vdots & E^j_i = 0 & E^j_j = 0 &  \\ 
+	0 & \cdots & \cdots & 1
+	\end{bmatrix} 
 \end{eqnarray}
+\end{Def}
 
+\begin{Def} Zeilenaddition:
+\begin{eqnarray}
+M_T &=& M \cdot Q^i_j(\lambda) 
+\end{eqnarray}
 \end{Def}
