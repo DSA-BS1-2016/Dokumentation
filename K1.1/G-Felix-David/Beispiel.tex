@@ -1,37 +1,40 @@
 Dies ist ein Beispiel der Anwendung des Gaußalgorithmus.
 Wir nehmen als  Ausgangsmatrix die $m\times n$ Matrix 
-$
-A=\begin{matrix}
+\begin{eqnarray*}
+A&=&\begin{pmatrix}
 0 & 0 & 1 & 2 & 9 \\ 
 0 & 3 & 4 & 5 & 9 \\ 
 0 & 6 & 7 & 8 & 9 \\ 
 0 & 9 & 9 & 9 & 9
-\end{matrix} 
+\end{pmatrix} 
 \leadsto
-\begin{matrix}
+\begin{pmatrix}
 0 & 3 & 4 & 5 & 9 \\ 
 0 & 0 & 1 & 2 & 9 \\ 
 0 & 6 & 7 & 8 & 9 \\ 
 0 & 9 & 9 & 9 & 9
-\end{matrix}
+\end{pmatrix}
 \leadsto 
-\begin{matrix}
+\begin{pmatrix}
  0 & 3 & 4 & 5 & 9 \\ \cdashline{3-5}
  0 & 0 & 1 & 2 & 9 \\ 
  0 & 0 & -1 & -2 & -9 \\ 
  0 & 0 & -3 & -6 & -18
-\end{matrix}
-\leadsto
-\begin{matrix}
+\end{pmatrix}\\
+&\leadsto &
+\begin{pmatrix}
   0 & 3 & 4 & 5 & 9 \\ 
   0 & 0 & 1 & 2 & 9 \\ 
   0 & 0 & 0 & 0 & 0 \\ 
   0 & 0 & 0 & 0 & 9
-  \end{matrix}
+  \end{pmatrix}
 \leadsto
-\begin{matrix}
+\begin{pmatrix}
   0 & 3 & 4 & 5 & 9 \\ 
   0 & 0 & 1 & 2 & 9 \\ 
   0 & 0 & 0 & 0 & 9 \\ 
   0 & 0 & 0 & 0 & 0
- \end{matrix}   $
+ \end{pmatrix}  
+ \end{eqnarray*}
+ 
+ Im ersten Schritt wurden die erste und zweite Zeile vertauscht um den ersten Pivot zu erhalten. 
