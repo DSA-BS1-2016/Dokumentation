@@ -7,7 +7,7 @@ Für den Gauss-Algorithmus sind einige basische Zeilenumformungen innerhalb eine
 \item Die Zeilenvertauschung
 \end{itemize}
 
-Um dieser verschiedenen Operationen auszuführen lässt sich die Matrix-Matrix-Multiplikation anwenden. Hierfür lassen sich diverse Matrizen definieren.
+Um dieser verschiedenen Operationen auszuführen lässt sich die Matrix-Matrix Multiplikation anwenden. Hierfür lassen sich diverse Matrizen definieren.
 Um jedoch eben jene Matrizen zu definieren, muss zuerst die Matrix $E^i_j$ definiert werden als:
 
 \subsubsection{Elementarmatrix $E^i_j$}
@@ -24,7 +24,7 @@ Um jedoch eben jene Matrizen zu definieren, muss zuerst die Matrix $E^i_j$ defin
 \end{Def}
 
 % Raggedright um linksbündig zu bleiben
-\hspace{2pt}
+\vspace{8pt}
 
 \raggedright Nun lassen sich die verschiedenen Zeilenumformungen folgendermaßen definieren:
 \subsubsection{Zeilenaddition $Q^i_j(\lambda)$}
@@ -42,7 +42,7 @@ Die dazugehörige Matrix $Q^i_j(\lambda)$ ist folgendermaßen definiert:
 \end{eqnarray}
 \end{Def}
 \raggedright
-Um nun diese Transformationsmatrix auf eine Matrix M anzuwenden, muss sie von links mit M multipliziert werden, schreibe: $M_{\small Ergebnis} = M \cdot Q^i_j(\lambda)$
+Um nun diese Transformationsmatrix auf eine Matrix M anzuwenden, muss sie von links mit M multipliziert werden, schreibe: $M_{Ergebnis} = M \cdot Q^i_j(\lambda)$
 
 \subsubsection{Zeilenmultiplikation $S^i(\lambda)$}
 Bei der Zeilenmultiplikation wird die Zeile i in M mit dem Faktor $\lambda$ multipliziert. Andere Zeilen werden hierbei nicht verändert. Die dazugehörige Matrix $S^i(\lambda)$ ist folgendermaßen definiert:
@@ -57,7 +57,7 @@ Bei der Zeilenmultiplikation wird die Zeile i in M mit dem Faktor $\lambda$ mult
 	\end{pmatrix} 
 \end{eqnarray}
 \end{Def}
-\raggedright Um nun diese Transformationsmatrix auf die Matrix M anzuwenden muss sie, wie bekannt, von links mit M multipliziert werden: $M_{\small Ergebnis} = M \cdot S^i(\lambda)$
+\raggedright Um nun diese Transformationsmatrix auf die Matrix M anzuwenden muss sie, wie bekannt, von links mit M multipliziert werden: $M_{Ergebnis} = M \cdot S^i(\lambda)$
 
 \subsubsection{Zeilenvertauschung $P^i_j$}
 Bei der Zeilenvertauschung werden die Zeilen i und j miteinander vertauscht. Die daraus entstehende Matrix enthält noch beide Zeilen wie zuvor, jedoch an anderen Positionen. Die dazugehörige Matrix $P^i_j$ ist folgendermaßen definiert:
@@ -73,4 +73,4 @@ Bei der Zeilenvertauschung werden die Zeilen i und j miteinander vertauscht. Die
 	\end{pmatrix} 
 \end{eqnarray}
 \end{Def}
-\raggedright Wie bereits bekannt muss diese Transformationsmatrix von links mit M multipliziert werden, um das Ergebnis zu bekommen: $M_{\small Ergebnis} = M \cdot P^i_j$
+\raggedright Wie bereits bekannt muss diese Transformationsmatrix von links mit M multipliziert werden, um das Ergebnis zu bekommen: $M_{Ergebnis} = M \cdot P^i_j$

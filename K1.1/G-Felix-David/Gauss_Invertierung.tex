@@ -8,10 +8,30 @@ $A = (M|E_m)$
 \begin{itemize}
 \item Ist dies nicht möglich, so kann die Matrix $M$ nicht invertiert werden.
 \end{itemize}
-\item Die neue Matrix $A_{\tiny Ergebnis}$ ist nun folgendermaßen aufgebaut: $A_{\tiny Ergebnis} = (E_m|M^{-1})$
+\item Die daraus folgende Matrix $A_{Ergebnis}$ ist nun folgendermaßen aufgebaut: $A_{Ergebnis} = (E_m|M^{-1})$
 \end{itemize}
-Entfernt man nun die ersten $m$ Spalten der Matrix $A_{\tiny Ergebnis}$, so ist die verbleibende Matrix $A_{\tiny Schnitt}$ gleich der Inversen der Matrix $M$, d.h. $M^{-1}$
+Entfernt man nun die ersten $m$ Spalten der Matrix $A_{Ergebnis}$, so ist die verbleibende Matrix $A_{Schnitt}$ gleich der Inversen der Matrix $M$, d.h. $M^{-1}$
 
-\begin{Bew}
+\begin{proof}
+Um eine Matrix $M$ in die ZSF zu brigen, wendet der Gauss-Algorithmus eine Verkettung von Elementarmatrizen $(E_1 \cdots E_k)$ an.
 
-\end{Bew}
+Zudem liefert der Gauss-Algorithmus bei der Umformung von $(M|E_m)$ die Matrix $(E_m|B)$, d.h.: 
+\begin{eqnarray*}
+ (E_1 \cdots E_k) \cdot (M|E_m) &=& (E_m|B) \\
+ \Leftrightarrow 
+ ((E_1 \cdots E_k) \cdot A | (E_1 \cdots E_k)) &=& (E_m|B)
+\end{eqnarray*}
+
+Diese Formel lässt sich nun wie folgt aufspalten:
+\begin{eqnarray*}
+ B &=& (E_1 \cdots E_k) \\
+(E_1 \cdots E_k) \cdot A &=& E_m
+\end{eqnarray*}
+
+Durch Ersetzung von $(E_1\cdots E_k)$ mit $B$, da diese Terme äquivalent sind (siehe oben), erhält man:
+\[ B\cdot A = E_m \]
+
+Da dies jedoch äquivalent ist zur Definition der Inverse einer Matrix, gilt:
+\[ B=A^{-1}\]
+
+\end{proof}
