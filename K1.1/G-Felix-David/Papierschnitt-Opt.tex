@@ -12,20 +12,20 @@ Nun müssen einige Daten angelegt werden:
 \begin{itemize}
 \item \emph{Menge S:} Die Menge $S$ beschreibt die Anzahl aller möglichen verschiedenen Schnittmuster, welche auf eine Rolle gebracht werden können. Dies sind insgesamt 12 diverse Kombinationen. Diese wären:
 
-\begin{tabular}{|c|c|c|c|c|}
-\hline 135cm & 108cm & 93cm & 42cm & Verlust ($w_s$) \\ 
-\hline 2 & 0 & 0 & 0 & 30 \\ 
-\hline 1 & 1 & 0 & 1 & 15 \\ 
-\hline 1 & 0 & 1 & 1 & 30 \\ 
-\hline 0 & 0 & 0 & 3 & 39 \\ 
-\hline 0 & 2 & 0 & 2 & 0 \\ 
-\hline 0 & 1 & 2 & 0 & 6 \\ 
-\hline 0 & 1 & 1 & 2 & 15 \\ 
-\hline 0 & 1 & 0 & 4 & 24 \\
-\hline 0 & 0 & 3 & 0 & 21 \\ 
-\hline 0 & 0 & 2 & 2 & 30 \\ 
-\hline 0 & 0 & 1 & 4 & 39 \\ 
-\hline 0 & 0 & 0 & 7 & 6 \\ 
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline Schnittmuster & 135cm & 108cm & 93cm & 42cm & Verlust ($w_s$) \\ 
+\hline 1 & 2 & 0 & 0 & 0 & 30 \\ 
+\hline 2 & 1 & 1 & 0 & 1 & 15 \\ 
+\hline 3 & 1 & 0 & 1 & 1 & 30 \\ 
+\hline 4 & 0 & 0 & 0 & 3 & 39 \\ 
+\hline 5 & 0 & 2 & 0 & 2 & 0 \\ 
+\hline 6 & 0 & 1 & 2 & 0 & 6 \\ 
+\hline 7 & 0 & 1 & 1 & 2 & 15 \\ 
+\hline 8 & 0 & 1 & 0 & 4 & 24 \\
+\hline 9 & 0 & 0 & 3 & 0 & 21 \\ 
+\hline 10 & 0 & 0 & 2 & 2 & 30 \\ 
+\hline 11 & 0 & 0 & 1 & 4 & 39 \\ 
+\hline 12 & 0 & 0 & 0 & 7 & 6 \\ 
 \hline 
 \end{tabular} 
 
@@ -54,7 +54,7 @@ N = \begin{tabular}{|c|c|}
 Nun können die Bedingungen des Linearen Problemes formuliert werden:
 
 \begin{itemize}
-\item Die Gesamtmenge einer Bestellung einer Schnittbreite $n_b$ muss erfüllt werden. Hierzu nimmt man die Summe aller Schnittmuster $s \in S$ multipliziert mit der Anzahl $a_sb$ der Schnittbreite $b$ welche sie enthalten multipliziert mit der Häufigkeit $h_s$ des Schnittmusters.
+\item Die Nachfrage einer Bestellung einer Schnittbreite $n_b$ muss erfüllt werden. Hierzu nimmt man die Summe aller Schnittmuster $s \in S$ multipliziert mit der Anzahl $a_sb$ der Schnittbreite $b$ welche sie enthalten multipliziert mit der Häufigkeit $h_s$ des Schnittmusters.
 
 \[ \sum\{s \in S\}a_{sb} h_s \geq n_b \]
 \item Zudem kann der Gesamtverlust $v$ definiert werden als der Verlust $w_s$ pro Schnittmuster $s \in S$ multipliziert mit der Häufigkeit dieses Schnittmusters.
