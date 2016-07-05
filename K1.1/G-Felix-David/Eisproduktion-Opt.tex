@@ -18,11 +18,40 @@ Bei der Erstellung der Linearen Ungleichung muss nun folgendes beachtet werden:
 
 Dies liefert folgende Bedingungen:
 \begin{itemize}
-\item Für einen Monat $m$ in $M$ muss die Produktionsmenge $p$, sowie die Menge der gelagerten Eiscreme $l$ größer als die Nachfrage $n$ sein:
+\item Für einen Monat $m$ in $M$ muss die Produktionsmenge $p_m$, sowie die Menge der gelagerten Eiscreme $l_m$ größer als die Nachfrage $n_m$ sein:
 \[ p_m + l_m \geq n_m \]
 \item Die Menge des in einem Monat gelagerten Eises ist gleich der in vorherigen Monat übrig-gebliebenen Menge Eises:
 \[ l_m = p_{m-1} + l_{m-1} - n_{m-1} \]
 \item Die insgesamt produzierte Menge an Eiscreme muss gleich der gesamten Nachfrage sein:
 \[ \sum p_m = \sum n_m \]
+\item Die Änderung der Produktionsmenge $c_m$ ergibt sich aus der Differenz der Produktionsmenge des Monates und des vorherigen Monates: 
+\[ c_m = p_{m} - p_{m-1} \] 
+	\begin{itemize}
+	\item Man muss hierbei beachten dass sowohl negative als auch positive Änderungen kosten! Da der Simplex-Algorithmus jedoch nur mit linearen Funktionen, d.h. ohne $\text{abs()}$ arbeiten kann, müssen zwei Hilfsvariablen, $cd_m$ und $ci_m$ (decrease und increase) aufgestellt werden:
+	\begin{align*}
+	c_m &= ci_m - cd_m \\
+	ci_m &\geq 0		\\
+	cd_m &\geq 0
+	\end{align*}
+	
+	\item Die absolute Gesamtänderung der Produktionsrate kann nun mit $ci_m + cd_m$ errechnet werden.
+ 	\end{itemize}
 \end{itemize}
 
+Zudem will man die Gesamtkosten minimieren, d.h. :
+\[ \min: \sum (1 \cdot p_m + 50 \cdot (ci_m + cd_m) + 20 \cdot l_m)\]
+
+Will man dies nun mithilfe eines Solvers lösen wollen, so würde eine mögliche Implementation der Bedingungen folgendermaßen aussehen:
+\newline
+
+min $\sum\{m~in~M\} ~ (1 \cdot p[m] + 50 \cdot (ci[m] + cd[m]) + 20 \cdot l[m])$ \\
+s.t. $\{m~in~M\} ~ p[m] + l[m] \geq n[m]$ \\
+s.t. $\{m~in~M\} ~ l[m] = p[m - 1] + l[m - 1] - n[m - 1]$ \\
+s.t. $\{m~in~M\} ~ \sum p[m] - n[m] = 0$ 	\\
+s.t. $\{m~in~M\} ~ c[m] = p[m] - p[m-1]$ 	\\
+s.t. $\{m~in~M\} ~ cd[m] \geq 0$			\\
+s.t. $\{m~in~M\} ~ ci[m] \geq 0$			\\
+s.t. $\{m~in~M\} ~ c[m] = ci[m] - cd[m]$	
+\newline
+
+solve;
