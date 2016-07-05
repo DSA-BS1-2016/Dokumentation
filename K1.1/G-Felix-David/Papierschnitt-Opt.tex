@@ -7,7 +7,25 @@ Das vierte Beispiel-Problem mit welchem wir uns befasst haben war das Problem ei
 \end{itemize}
 
 Das Problem nun befasst sich damit, auf welche Art und Weise man einen möglichst geringen Verlust an Papier durch die Schnitte hat.
-Nun können schnell einige erste Bedingungen aufgestellt werden:
+Nun müssen einige Daten angelegt werden:
+
+\begin{itemize}
+\item \emph{Menge S:} Die Menge $S$ beschreibt die Anzahl aller möglichen verschiedenen Schnittmuster, welche auf eine Rolle gebracht werden können. Dies sind insgesamt 16 diverse Kombinationen.
+\item Zu einem Element der Menge $S$, $s \in S$, liegen nun verschiedene Werte vor:
+\begin{itemize}
+\item \emph{Häufigkeit h:} Die Häufigkeit $h$ eines Schnittmusters $s$, d.h. $h_s$, gibt an, wie häufig das besagte Schnittmuster verwendet wird.
+\item \emph{Anzahl einer Schnittbreite a:}	Die Anzahl $a$ eines Schnittmusters $s$ für eine gewisse Schnittbreite $b$, d.h. $a_{sb}$ gibt an, wie oft die Schnittbreite $b$ im Schnittmuster $s$ vorkommt.
+\item \emph{Verlust pro Schnittmuster w:} Der Verlust $w$ pro Schnittmuster $s$, d.h. $w_s$, gibt an, wie viel Papier pro Schnittmuster verloren geht.
+\end{itemize}
+\item \emph{Menge B:} Die Menge $B$ beschreibt die vier verschiedenen Schnittbreiten. Sie kann ausgedrückt werden als: 
+\[ B = \{135,108,93,42\} \]
+\begin{itemize}
+\item \emph{Nachfrage n:} Die Nachfrage $n \in N$ einer Schnittbreite $b$, d.h. $n_b$, gibt an, wie viele Elemente einer jeweiligen Schnittbreite $b$ bestellt wurden. Sie kann ausgedrückt werden als: 
+\[ N = \{97, 610, 395, 211\}\]
+\end{itemize}
+\end{itemize}
+
+Nun können die Bedingungen des Linearen Problemes formuliert werden:
 
 \begin{itemize}
 \item Die Gesamtmenge einer Bestellung einer Schnittbreite $n_b$ muss erfüllt werden. Hierzu nimmt man die Summe aller Schnittmuster $s \in S$ multipliziert mit der Anzahl $a_sb$ der Schnittbreite $b$ welche sie enthalten multipliziert mit der Häufigkeit $h_s$ des Schnittmusters.
