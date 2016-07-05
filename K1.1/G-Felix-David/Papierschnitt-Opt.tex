@@ -1,0 +1,31 @@
+Das vierte Beispiel-Problem mit welchem wir uns befasst haben war das Problem einer theoretischen Papierfirma. Besagte Firma produziert Standard-Papierrollen mit einer Breite von 3m, bietet jedoch für ihre Kunden verschiedene andere Schnittbreiten an, von denen jeweils eine bestimmte Menge bestellt wurde:
+\begin{itemize}
+\item 97 Rollen mit 135cm Breite
+\item 610  Rollen mit 108cm Breite
+\item 395  Rollen mit 93cm Breite
+\item 221  Rollen mit 42cm Breite
+\end{itemize}
+
+Das Problem nun befasst sich damit, auf welche Art und Weise man einen möglichst geringen Verlust an Papier durch die Schnitte hat.
+Nun können schnell einige erste Bedingungen aufgestellt werden:
+
+\begin{itemize}
+\item Die Gesamtschnittbreite $b$ einer Rolle $r$ darf nicht größer sein als die Rolle selbst, d.h. 3m: 
+\[ b_r \leq 3 \]
+\item Alle Bestellungen müssen versorgt werden, d.h. die Anzahl $a$ eines Schnittmusters $s$ für eine Rolle $r$ welches hergestellt wird darf nicht kleiner als die Nachfrage $n$ sein:
+\[ \sum\{r~in~R\} a_{rs} \geq n_{s} \]
+\item Zudem kann die Gesamtschnittbreite einer Rolle als Summe der Schnittmuster angesehen werden:
+\[ b_r = \sum\{s~in~S\}a_{rs} \]
+\item Zudem kann der Papierverlust $p$ einer Rolle $r$ als nicht verwendeter Rest der Gesamtschnittbreite festgelegt werden:
+\[ p_r = 3 - b_r \]
+\end{itemize}
+
+Da nicht unbedingt alle Papierrollen verwendet werden, muss zudem festgelegt werden welche Rollen benötigt werden. Dies lässt sich festlegen durch eine Ganzzahl $v_r3$, welche im Bereich $0 \leq v_r \leq 1$ liegt.
+
+\begin{itemize}
+\item Für alle nicht verwendeten Rollen, d.h. $v = 0$, soll die Gesamtschnittbreite = 0 sein:
+\[ (1 - v_r)(b_r) = 0 \]
+\end{itemize}
+
+Nun kann man eine Formel für den Gesamtverlust $g$ erstellen, welche man minimieren will:
+\[\min: g = \sum\{r~in~R\}v_r \cdot p_r\]
