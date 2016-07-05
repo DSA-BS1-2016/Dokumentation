@@ -10,7 +10,25 @@ Das Problem nun befasst sich damit, auf welche Art und Weise man einen möglichs
 Nun müssen einige Daten angelegt werden:
 
 \begin{itemize}
-\item \emph{Menge S:} Die Menge $S$ beschreibt die Anzahl aller möglichen verschiedenen Schnittmuster, welche auf eine Rolle gebracht werden können. Dies sind insgesamt 16 diverse Kombinationen.
+\item \emph{Menge S:} Die Menge $S$ beschreibt die Anzahl aller möglichen verschiedenen Schnittmuster, welche auf eine Rolle gebracht werden können. Dies sind insgesamt 12 diverse Kombinationen. Diese wären:
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline 135cm & 108cm & 93cm & 42cm & Verlust ($w_s$) \\ 
+\hline 2 & 0 & 0 & 0 & 30 \\ 
+\hline 1 & 1 & 0 & 1 & 15 \\ 
+\hline 1 & 0 & 1 & 1 & 30 \\ 
+\hline 0 & 0 & 0 & 3 & 39 \\ 
+\hline 0 & 2 & 0 & 2 & 0 \\ 
+\hline 0 & 1 & 2 & 0 & 6 \\ 
+\hline 0 & 1 & 1 & 2 & 15 \\ 
+\hline 0 & 1 & 0 & 4 & 24 \\
+\hline 0 & 0 & 3 & 0 & 21 \\ 
+\hline 0 & 0 & 2 & 2 & 30 \\ 
+\hline 0 & 0 & 1 & 4 & 39 \\ 
+\hline 0 & 0 & 0 & 7 & 6 \\ 
+\hline 
+\end{tabular} 
+
 \item Zu einem Element der Menge $S$, $s \in S$, liegen nun verschiedene Werte vor:
 \begin{itemize}
 \item \emph{Häufigkeit h:} Die Häufigkeit $h$ eines Schnittmusters $s$, d.h. $h_s$, gibt an, wie häufig das besagte Schnittmuster verwendet wird.
@@ -18,10 +36,18 @@ Nun müssen einige Daten angelegt werden:
 \item \emph{Verlust pro Schnittmuster w:} Der Verlust $w$ pro Schnittmuster $s$, d.h. $w_s$, gibt an, wie viel Papier pro Schnittmuster verloren geht.
 \end{itemize}
 \item \emph{Menge B:} Die Menge $B$ beschreibt die vier verschiedenen Schnittbreiten. Sie kann ausgedrückt werden als: 
-\[ B = \{135,108,93,42\} \]
+\[ B = \{135cm,108cm,93cm,42cm\} \]
 \begin{itemize}
 \item \emph{Nachfrage n:} Die Nachfrage $n \in N$ einer Schnittbreite $b$, d.h. $n_b$, gibt an, wie viele Elemente einer jeweiligen Schnittbreite $b$ bestellt wurden. Sie kann ausgedrückt werden als: 
-\[ N = \{97, 610, 395, 211\}\]
+
+N = \begin{tabular}{|c|c|}
+\hline Schnittbreite & Anzahl \\
+\hline 135cm & 97-mal \\ 
+\hline 108cm & 610-mal \\ 
+\hline 93cm & 395-mal \\ 
+\hline 42cm & 211-mal \\ 
+\hline 
+\end{tabular} 
 \end{itemize}
 \end{itemize}
 
