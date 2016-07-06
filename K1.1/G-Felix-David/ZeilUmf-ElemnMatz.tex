@@ -2,25 +2,26 @@
 Für den Gauss-Algorithmus sind einige basische Zeilenumformungen innerhalb einer Matrix notwendig. Diese sind:
 
 \begin{itemize}
-\item Die Zeilenaddition
-\item Die Zeilenmultiplikation
-\item Die Zeilenvertauschung
+\item Zeilenaddition
+\item Zeilenmultiplikation
+\item Zeilenvertauschung
 \end{itemize}
 
-Um dieser verschiedenen Operationen auszuführen lässt sich die Matrix-Matrix Multiplikation anwenden. Hierfür lassen sich diverse Matrizen definieren.
+Um diese verschiedenen Operationen auszuführen lässt sich die Matrix-Matrix-Multiplikation anwenden. Hierfür lassen sich drei verschiedene, im folgenden aufgeführte Matrizen $Q^i_j(\lambda)$, $S^i(\lambda)$ und $P^i_j$ definieren.
 Um jedoch eben jene Matrizen zu definieren, muss zuerst die Matrix $E^i_j$ definiert werden als:
 
-\subsubsection{Elementarmatrix $E^i_j$}
-\begin{Def} Elementarmatrix $E^i_j$
-\begin{eqnarray}
-	E^i_j &=& m \times m \\
- 	E^i_j &=& 
+
+\textbf{TODODODO}
+\subsubsection{Matrix $E^i_j$}
+\begin{Def} Matrix $E^i_j$
+\begin{align*}
+ 	E^i_j &=
 	 	\begin{pmatrix}
 	 	0 & \cdots & 0 \\
-	 	\vdots & e^i_j = 1 & \vdots \\
+	 	\vdots & e_{ij} = 1 & \vdots \\
 	 	0 & \cdots & 0 
  	\end{pmatrix}
-\end{eqnarray}
+\end{align*}
 \end{Def}
 
 % Raggedright um linksbündig zu bleiben
@@ -28,49 +29,52 @@ Um jedoch eben jene Matrizen zu definieren, muss zuerst die Matrix $E^i_j$ defin
 
 \raggedright Nun lassen sich die verschiedenen Zeilenumformungen folgendermaßen definieren:
 \subsubsection{Zeilenaddition $Q^i_j(\lambda)$}
-Bei der Zeilenaddition wird zur Zeile i die Zeile j mit Vorfaktor $\lambda$ hinzugefügt.
-Die dazugehörige Matrix $Q^i_j(\lambda)$ ist folgendermaßen definiert:
+Bei der Zeilenaddition wird zur Zeile $i$ die Zeile $j$ mit Vorfaktor $\lambda$ hinzugefügt.
+Die Matrix $Q^i_j(\lambda)$ ist folgendermaßen definiert:
 \begin{Def} Zeilenaddition:
-\begin{eqnarray}
+\begin{align*}
 	Q^i_j(\lambda) & = & E_m + \lambda \cdot E^i_j \\
 	Q^i_j(\lambda) & = & 
 	\begin{pmatrix}
 	1 & \cdots & 0 \\ 
-	\vdots &  q^i_j = \lambda & \vdots \\  
+	\vdots &  q_{ij} = \lambda & \vdots \\  
 	0 & \cdots & 1
 	\end{pmatrix} 
-\end{eqnarray}
+\end{align*}
 \end{Def}
 \raggedright
-Um nun diese Transformationsmatrix auf eine Matrix M anzuwenden, muss sie von links mit M multipliziert werden, schreibe: $M_{Ergebnis} = M \cdot Q^i_j(\lambda)$
+Um nun diese Elementarmatrix auf eine Matrix M anzuwenden, muss sie von links mit $M$ multipliziert werden: $Q^i_j(\lambda) \cdot M$
+Das Ergebnis dieser Multiplikation ist nun eine neue Matrix, welche den Dimensionen der Matrix $M$ entspricht und dieselben Zeilen hat wie $M$, jedoch mit dem Unterschied dass zur Zeile $i$ die Zeile $j$ mit Vorfaktor $\lambda$ hinzugefügt wurde.
 
 \subsubsection{Zeilenmultiplikation $S^i(\lambda)$}
-Bei der Zeilenmultiplikation wird die Zeile i in M mit dem Faktor $\lambda$ multipliziert. Andere Zeilen werden hierbei nicht verändert. Die dazugehörige Matrix $S^i(\lambda)$ ist folgendermaßen definiert:
+Bei der Zeilenmultiplikation wird die Zeile $i$ in $M$ mit dem Faktor $\lambda$ multipliziert. Andere Zeilen werden hierbei nicht verändert. Die Matrix $S^i(\lambda)$ ist folgendermaßen definiert:
 \begin{Def}
-\begin{eqnarray}
+\begin{align*}
 	S^i(\lambda) &=& E_m + (\lambda - 1) \cdot E^i_i \\
 	S^i(\lambda) &=& 
 	\begin{pmatrix}
 	1 & \cdots & 0 \\ 
-	\vdots & s^i_i = \lambda & \vdots \\ 
+	\vdots & s_{ii} = \lambda & \vdots \\ 
 	0 & \cdots & 1
 	\end{pmatrix} 
-\end{eqnarray}
+\end{align*}
 \end{Def}
-\raggedright Um nun diese Transformationsmatrix auf die Matrix M anzuwenden muss sie, wie bekannt, von links mit M multipliziert werden: $M_{Ergebnis} = M \cdot S^i(\lambda)$
+\raggedright Um nun diese Elementarmatrix auf eine Matrix $M$ anzuwenden muss sie, wie bekannt, von links mit $M$ multipliziert werden: $S^i(\lambda) \cdot M$. 
+Das Ergebnis dieser Multiplikation ist eine Matrix mit den Dimensionen von $M$, sowie den selben Zeilen, mit jedoch dem Unterschied dass die Zeile $i$ mit einem Vorfaktor $\lambda$ multipliziert wurde.
 
 \subsubsection{Zeilenvertauschung $P^i_j$}
-Bei der Zeilenvertauschung werden die Zeilen i und j miteinander vertauscht. Die daraus entstehende Matrix enthält noch beide Zeilen wie zuvor, jedoch an anderen Positionen. Die dazugehörige Matrix $P^i_j$ ist folgendermaßen definiert:
+Bei der Zeilenvertauschung werden die Zeilen $i$ und $j$ miteinander vertauscht. Die daraus entstehende Matrix enthält noch beide Zeilen wie zuvor, jedoch an anderen Positionen. Die dazugehörige Matrix $P^i_j$ ist folgendermaßen definiert:
 \begin{Def} Zeilenvertauschung:
-\begin{eqnarray}
+\begin{align*}
 	P_j^i(\lambda) &=& E_m - E^i_i - E^j_j + E^j_i + E^i_j \\
 	P^i_j &=& 
 	\begin{pmatrix}
 	1 & \cdots & \cdots & 0 \\ 
-	\vdots & E^i_i = 0 & E^i_j = 1 &  \\ 
-	\vdots & E^j_i = 1 & E^j_j = 0 &  \\ 
+	\vdots & E_{ii} = 0 & E_{ij} = 1 &  \\ 
+	\vdots & E_{ji} = 1 & E_{jj} = 0 &  \\ 
 	0 & \cdots & \cdots & 1
 	\end{pmatrix} 
-\end{eqnarray}
+\end{align*}
 \end{Def}
-\raggedright Wie bereits bekannt muss diese Transformationsmatrix von links mit M multipliziert werden, um das Ergebnis zu bekommen: $M_{Ergebnis} = M \cdot P^i_j$
+\raggedright Um nun Zeile $i$ und $j$ in einer Matrix $M$ zu vertauschen muss die Elementarmatrix $P^i_j$ von links an $M$ multipliziert werden: $P^i_j \cdot M$
+Das Ergebnis dieser Multiplikation ist eine Matrix mit den Dimensionen von $M$ sowie den gleichen Zeilen, mit dem Unterschied dass die Zeilen $i$ und $j$ miteinander vertauscht wurden.
