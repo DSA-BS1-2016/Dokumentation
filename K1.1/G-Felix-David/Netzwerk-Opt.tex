@@ -1,5 +1,5 @@
-	In dem gestellten Problem geht es darum ein Netzwerkfluss von Eingang $o$ zu $n$ über die Knoten $a$ bis $d$ größtmöglich zu gestalten unter Beachtung verschiedener Bedingungen.Jeder Knoten hat nur Verbindungen zu bestimmten anderen Knoten bzw. Eingang un Ausgang $o$ und $n$. Diese Verbindungen können nur in eine Richtung benutzt werden und haben eine Höchstflussrate welche nicht überschritten werden darf. 
-	\includegraphics[width=\textwidth]{Grafiken/Netzwerkfluss_Bild.png}
+	In dem gestellten Problem geht es darum ein Netzwerkfluss von Eingang $o$ zu Ausgang $n$ über die Knoten $a$ bis $d$ größtmöglich zu gestalten unter Beachtung verschiedener Bedingungen.  Jeder Knoten hat nur Verbindungen zu bestimmten anderen Knoten bzw. Eingang und Ausgang $o$ und $n$. Diese Verbindungen können nur in eine Richtung benutzt werden und haben eine Höchstflussrate welche nicht überschritten werden darf.
+	\includegraphics*[width=\textwidth]{Grafiken/Netzwerkflussbild.png}
 	Also versuchen wir den Fluss zum letzten Knoten $o$ zu maximieren.
 	\[ \max(f_{do}+f_{eo}) \]
 	Um die maximale Kapazität der Verbindungen zu beachten werden folgende Ungleichungen eingeführt.Hierbei sind $i$ und $j$ zwei Knoten zwischen denen eine Verbindung besteht. $k_{ij}$ beschreibt die maximale Kapazität und $f_{ij}$ den tatsächlichen Fluss.Daraus ergibt sich für alle möglichen zulässigen $i$ und $j$:  
