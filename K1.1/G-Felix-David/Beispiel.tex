@@ -1,41 +1,40 @@
 Dies ist ein Beispiel der Anwendung des Gaußalgorithmus.
-Wir nehmen als  Ausgangsmatrix die $m\times n$ Matrix $A$ welch zur $m \times n$ Matrix $\tilde{A}$  
+Wir nehmen als  Ausgangsmatrix die $m\times n$-Matrix $A$ welch zur $m \times n$-Matrix $\tilde{A}$ in Zeilenstufenform umgewandelt wird.  
 \begin{eqnarray*}
 A&=&\begin{pmatrix}
 0 & 0 & 1 & 2 & 9 \\ 
 0 & 3 & 4 & 5 & 9 \\ 
 0 & 6 & 7 & 8 & 9 \\ 
 0 & 9 & 9 & 9 & 9
-\end{pmatrix} 
-\leadsto
+\end{pmatrix}
+\substack{P_1^2\\\leadsto}
 \begin{pmatrix}
 0 & 3 & 4 & 5 & 9 \\ 
 0 & 0 & 1 & 2 & 9 \\ 
 0 & 6 & 7 & 8 & 9 \\ 
 0 & 9 & 9 & 9 & 9
 \end{pmatrix}
-\leadsto 
+\substack{Q_3^1(-2)\\Q_4^1(-3)\\\leadsto} 
 \begin{pmatrix}
  0 & 3 & 4 & 5 & 9 \\ 
  0 & 0 & 1 & 2 & 9 \\ 
  0 & 0 & -1 & -2 & -9 \\ 
  0 & 0 & -3 & -6 & -18
 \end{pmatrix}\\
-&\leadsto &
+&\substack{Q_3^2(1)\\Q_4^2(3)\\\leadsto} &
 \begin{pmatrix}
   0 & 3 & 4 & 5 & 9 \\ 
   0 & 0 & 1 & 2 & 9 \\ 
   0 & 0 & 0 & 0 & 0 \\ 
   0 & 0 & 0 & 0 & 9
   \end{pmatrix}
-\leadsto
+\substack{P_3^4\\\leadsto}
 \begin{pmatrix}
   0 & 3 & 4 & 5 & 9 \\ 
   0 & 0 & 1 & 2 & 9 \\ 
   0 & 0 & 0 & 0 & 9 \\ 
   0 & 0 & 0 & 0 & 0
- \end{pmatrix}  
+ \end{pmatrix}=\tilde{A}  
  \end{eqnarray*}
  
- Im ersten Schritt wurden die erste und zweite Zeile vertauscht um den ersten Pivot zu erhalten.
- Danach wurden zu der dritten und vierten Zeile Vielfache der ersten addiert, was die Einträge $a_{3,2}$ und $a_{4,2}$ eliminierte. Der Gauß-Algorithmus wurde nun erneut an der Matrix $A_2=A_{2-3,3-5}$ ausgeführt wodurch man die vierte Matrix erhält, in welcher nur noch die dritte und vierte Zeile Vertauscht werden müssen um Matrix $\tilde{A}$ in ZSF zu erhalten.
+ Im ersten Schritt wurden die erste und zweite Zeile vertauscht um den ersten Pivot zu erhalten. Danach wurden zu der dritten und vierten Zeile Vielfache der ersten addiert, was die Einträge $a_{3,2}$ und $a_{4,2}$ eliminierte. Der Gauß-Algorithmus wurde nun erneut an der Matrix $A_2=A_{2-3,3-5}$ ausgeführt wodurch man die vierte Matrix erhält, in welcher nur noch die dritte und vierte Zeile Vertauscht werden müssen um Matrix $\tilde{A}$ in ZSF zu erhalten.

@@ -1,14 +1,10 @@
-In diesem Problem geht es darum mithilfe von Messwerten der Schattengröße und dem Gewicht eines Tieres zu bestimmen ob es ein Hase oder Wiesel ist.Man kann es graphisch vorstellen als ob würde man alle Messwerte in ein Diagramm eintragen und versuchen eine Gerade $y=mx+n$ zu finden die die Gruppen von Punkten trennt.
-%Bild
+In diesem Problem geht es darum mithilfe von Messwerten der Schattengröße und dem Gewicht eines Tieres zu bestimmen ob es ein Hase oder Wiesel ist.Man kann es graphisch vorstellen als würde man alle Messwerte in ein Diagramm eintragen und versuchen eine Gerade $y=mx+n$ zu finden die die Gruppen von Punkten trennt.
+\includegraphics[width=\textwidth]{Grafiken/HaseWieselBild.png}
 Dann würde gelten das \[y_h>mx_h+n\] für alle Hasen und \[
-y_w<mx_w+n\] für alle Wiesel. Jedoch sind Gleichungen mit wahrem Größer gleich und wahrem kleiner Gleich in linearen Programmen verboten.Deshalb wird eine Variable $\lambda$ eingeführt welche den Abstand zwischen allen Punkten und der Geraden beschreibt.Dies resultiert in:
+y_w<mx_w+n\] für alle Wiesel. Jedoch sind strikte Ungleichungen in linearen Programmen verboten. Deshalb wird eine Variable $\lambda$ eingeführt welche den Abstand zwischen allen Punkten und der Geraden beschreibt. Dies resultiert in:
 \begin{align*}
+	\max{}(\lambda)\\
 	y_h\geq{}mx_h+n+\lambda\\
-	y_w\leq{}mx_w+n-\lambda\\
-	max{\lambda}
+	y_w\leq{}mx_w+n-\lambda
 \end{align*} 
-Wobei versucht wird $\lambda$ zu maximieren ohne das Punkte auf der falschen Seite der Geraden liegen.Daraus ergeben sich für alle Punkte die Ungleichungen 
-\begin{align*}
-	0 \leq{} y_h-mx_h+n\\
-	0\leq{}mx_w+n -y_w
-\end{align*} 
+Wobei versucht wird, $\lambda$ zu maximieren, ohne das Punkte auf der falschen Seite der Geraden liegen.
