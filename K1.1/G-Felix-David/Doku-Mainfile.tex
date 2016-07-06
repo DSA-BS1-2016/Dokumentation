@@ -30,6 +30,16 @@
 
 \section{Der Gauß-Algorithmus}
 \input{Gauss-Beschreibung}
+
+\subsection{Die Zeilenstufenform}
+Eine wesentliche Eigenschaft des Gauß-Algorithmus ist die Umformung einer Matrix in eine sogenannte Zeilenstufenform. Diese wird nun im Folgenden genauer erläutert.
+
+In der Zeilenstufenform ist gegeben, dass alle Spalten einer Matrix $M$ welche mindestens ein Element $m_{ij} \neq 0$ enthalten über den Spalten welche nur Elemente $m_{ij} = 0$ enthalten liegen.
+Nun lässt sich der Rang $r$ einer Matrix $M$ in Zeilenstufenform als Anzahl der Spalten, welche mindestens ein Element $m_{ij} \neq 0$ enthalten definieren.
+
+Eine besondere Form der Zeilenstufenform wird Stufenform genannt. Hier wird für jede Zeile ein sog. Pivot-Element festgelegt.
+Jenes Pivot-Element ist das erste Element der Zeile, welches von links gesehen her ungleich 0 ist. Eine zusätzliche Bedingung der Stufenform ist, dass dieses Pivot-Element pro Zeile mindestens eine Spalte weiter rechts liegen muss als in der vorhergehenden Zeile.
+
 \subsection{Zeilenumformungen und Elementarmatrizen}
 \input{ZeilUmf-ElemnMatz}
 
