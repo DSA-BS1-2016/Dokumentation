@@ -10,6 +10,10 @@ Dies bedeutet, dass an die Matrix $M$ eine Einheitsmatrix $E_m$ der Größe von 
 \item Die daraus folgende Matrix $A$ ist nun folgendermaßen aufgebaut: \[ A = (E_m|M^{-1}) \]
 \end{enumerate}
 
+\begin{Them}
+Der Gauß-Algorithmus kann genutzt werden, um eine Matrix $(M|E_m)$ in $(E_m|M^{-1})$ um zu wandeln, und somit die Inverse zu berechnen.
+\end{Them}
+
 \begin{proof}
 Um eine Matrix $M$ in die Form $(E_m|B)$ zu bringen, wendet der Gauß-Algorithmus ein Produkt von Elementarmatrizen $(E_k \cdots E_1)$ an.
 
@@ -26,11 +30,26 @@ Es lässt sich nun wie folgt ab lesen:
 \end{align*}
 
 Da nun laut obiger Formel $(E_k \cdots E_1) = B$ gilt, lässt sich nun in der zweiten Formel $(E_k \cdots E_1)$ durch $B$ ersetzten. Hieraus erhält man:
-\[ B\cdot M = E_m \]
+\[ B M = E_m \]
+
+Nun muss noch bewiesen werden dass gilt: 
+\[ M B = E_m \]
+
+Dies kann erreicht werden, indem man den Gauß-Algorithmus analog nicht zeilenweise sondern spaltenweise arbeiten lässt, d.h. dass die Elementarmatrizen von rechts an $M$ multipliziert werden.
+\[ (MB)^T = B^TM^T \]
+
+Hieraus erhält man eine weitere Matrix $C$, für welche gilt:
+\[ MC = E_m \]
+
+Nun kann folgende Gleichung aufgestellt werden: 
+\[ C = E_mC = (BM)C = B(MC) = BE_m = B \]
+
+So gilt nun auch: 
+\[ MB = E_m \]
 
 Da dies jedoch äquivalent ist zur Definition der Inverse einer Matrix, gilt:
 \[ B=M^{-1}\]
 
-\textbf{TODODODO}
+
 
 \end{proof}
