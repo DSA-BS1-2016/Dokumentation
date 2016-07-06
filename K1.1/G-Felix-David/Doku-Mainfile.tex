@@ -4,6 +4,8 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{arydshln}	%Array Dash Line
+\usepackage{color}
+
 
 \usepackage{graphicx}
 \usepackage{textcomp}
@@ -35,10 +37,28 @@
 Eine wesentliche Eigenschaft des Gauß-Algorithmus ist die Umformung einer Matrix in eine sogenannte Zeilenstufenform. Diese wird nun im Folgenden genauer erläutert.
 
 In der Zeilenstufenform ist gegeben, dass alle Spalten einer Matrix $M$ welche mindestens ein Element $m_{ij} \neq 0$ enthalten über den Spalten welche nur Elemente $m_{ij} = 0$ enthalten liegen.
+Eine Matrix in Zeilenstufenform könnte z.~B. so aussehen:
+\[ \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 0 & 0 & 0 \end{pmatrix} \]
+
+Hier sieht man, dass die dritte Zeile, welche nur Nullen enthält, unterhalb der beiden anderen Zeilen liegt.
+
 Nun lässt sich der Rang $r$ einer Matrix $M$ in Zeilenstufenform als Anzahl der Spalten, welche mindestens ein Element $m_{ij} \neq 0$ enthalten definieren.
 
-Eine besondere Form der Zeilenstufenform wird Stufenform genannt. Hier wird für jede Zeile ein sog. Pivot-Element festgelegt.
-Jenes Pivot-Element ist das erste Element der Zeile, welches von links gesehen her ungleich 0 ist. Eine zusätzliche Bedingung der Stufenform ist, dass dieses Pivot-Element pro Zeile mindestens eine Spalte weiter rechts liegen muss als in der vorhergehenden Zeile.
+Eine besondere Form der Zeilenstufenform wird Stufenform genannt. Hier wird für jede Nicht-Null-Zeile ein sog. Pivot-Element, bzw. der Zeilenführer festgelegt.
+Jenes Pivot-Element ist das erste Element der Zeile, welches von links gesehen her ungleich 0 ist. Im folgenden Beispiel wären dies die rot markierten Elemente:
+\[ \begin{pmatrix}{\color{red}1}& 2 & 3 & 4\\ 0 &{\color{red}6}& 7 & 0 \\ 0 & 0 & 0 & 0 \\ 0 &{\color{red}7}& 8 & 1 \\ 0 & 0 &{\color{red}3}& 3 \end{pmatrix} \]
+
+Eine Matrix $M$ ist nun in Stufenform, wenn:
+\begin{itemize}
+\item Alle Nicht-Null-Zeilen liegen oberhalb der Nullzeilen.
+\item Alle Pivot-Elemente liegen mindestens eine Spalte weiter rechts als in der darüber liegenden Zeile. (Das Pivot-Element der ersten Zeile darf ganz links liegen.)
+\item Alle Einträge unterhalb eines Pivot-Elementes sind Null.
+\end{itemize}
+
+Eine Matrix, welche in Stufenform vorliegt, könnte z.~B. folgendermaßen aussehen:
+
+\[ \begin{pmatrix}{\color{red}1}& 2 & 3 & 4 & 1\\ 0 &{\color{red}6}& 7 & 8 & 3 \\ 0 & 0 & 0 &{\color{red}5}& 4 \\ 0 &0& 0 & 0 &{\color{red}7}\\ 0 & 0 &0& 0 & 0\end{pmatrix} \]
+(Pivot-Elemente sind hier erneut in Rot dargestellt.)
 
 \subsection{Zeilenumformungen und Elementarmatrizen}
 \input{ZeilUmf-ElemnMatz}
