@@ -1,10 +1,15 @@
-Ein weiteres Problem mit welchem wir uns befassten war das Problem einer theoretischen Papierfirma. Besagte Firma produziert Standard-Papierrollen mit einer Breite von 3m, bietet jedoch für ihre Kunden verschiedene andere Schnittbreiten an, von denen jeweils eine bestimmte Menge bestellt wurde:
-\begin{itemize}
-\item 97 Rollen mit 135cm Breite
-\item 610  Rollen mit 108cm Breite
-\item 395  Rollen mit 93cm Breite
-\item 221  Rollen mit 42cm Breite
-\end{itemize}
+Ein weiteres Problem mit welchem wir uns befassten war das Problem einer theoretischen Papierfirma. Besagte Firma produziert Standard-Papierrollen mit einer Breite von 3m, bietet jedoch für ihre Kunden verschiedene andere Schnittbreiten an, von denen jeweils eine bestimmte Menge bestellt wurde: \newline
+{\centering
+\begin{tabular}{|c|c|}
+\hline Schnittbreite & Anzahl \\
+\hline 135cm & 97-mal \\ 
+\hline 108cm & 610-mal \\ 
+\hline 93cm & 395-mal \\ 
+\hline 42cm & 211-mal \\ 
+\hline 
+\end{tabular}}
+
+\vspace{10pt}
 
 Das Problem nun befasst sich damit, wie man möglichst wenige Papierrollen benötigt, um alle Bestellungen zu decken.
 
@@ -32,36 +37,33 @@ Nun müssen einige Variablen festgelegt werden:
 
 \item Zu einem Element der Menge $S$, $s \in S$, liegen nun verschiedene Werte vor:
 \begin{itemize}
-\item \emph{Häufigkeit h:} Die Häufigkeit $h$ eines Schnittmusters $s$, d.h. $h_s$, gibt an, wie häufig das besagte Schnittmuster verwendet wird.
-\item \emph{Anzahl einer Schnittbreite a:}	Die Anzahl $a$ eines Schnittmusters $s$ für eine gewisse Schnittbreite $b$, d.h. $a_{sb}$ gibt an, wie oft die Schnittbreite $b$ im Schnittmuster $s$ vorkommt.
+\item Die Häufigkeit $h$ eines Schnittmusters $s$, d.h. $h_s$, gibt an, wie häufig das besagte Schnittmuster verwendet wird.
+\item Die Anzahl $a$ eines Schnittmusters $s$ für eine gewisse Schnittbreite $b$, d.h. $a_{sb}$ gibt an, wie oft die Schnittbreite $b$ im Schnittmuster $s$ vorkommt.
 \end{itemize}
 \item \emph{Menge B:} Die Menge $B$ beschreibt die vier verschiedenen Schnittbreiten. Sie kann ausgedrückt werden als: 
-\[ B = \{135cm,108cm,93cm,42cm\} \]
+\[ B = \{135\text{cm},108\text{cm},93\text{cm},42\text{cm}\} \]
 \begin{itemize}
-\item \emph{Nachfrage n:} Die Nachfrage $n \in N$ einer Schnittbreite $b$, d.h. $n_b$, gibt an, wie viele Elemente einer jeweiligen Schnittbreite $b$ bestellt wurden. Sie kann ausgedrückt werden als: 
-
-N = \begin{tabular}{|c|c|}
-\hline Schnittbreite & Anzahl \\
-\hline 135cm & 97-mal \\ 
-\hline 108cm & 610-mal \\ 
-\hline 93cm & 395-mal \\ 
-\hline 42cm & 211-mal \\ 
-\hline 
-\end{tabular} 
+\item \emph{Nachfrage n:} Die Nachfrage $n \in N$ einer Schnittbreite $b \in B$, d.h. $n_b$, gibt an, wie viele Elemente der jeweiligen Schnittbreite $b$ bestellt wurden. 
 \end{itemize}
 \end{itemize}
 
-Nun können die Bedingungen des Linearen Problemes formuliert werden:
+Das gesamte Lineare Programm sieht nun folgendermaßen aus:
+ 
+\begin{align*}
+\min p & \\
+ n_b  & \leq \sum\{s \in S\}a_{sb} h_s\\
+h_s & \geq 0 \\
+p & = \sum\{s \in S\}h_s 
+\end{align*}
+
+Im genaueren:
 
 \begin{itemize}
 \item Die Nachfrage einer Bestellung einer Schnittbreite $n_b$ muss erfüllt werden. Hierzu nimmt man die Summe aller Schnittmuster $s \in S$ multipliziert mit der Anzahl $a_sb$ der Schnittbreite $b$ welche sie enthalten multipliziert mit der Häufigkeit $h_s$ des Schnittmusters.
-
-\[ \sum\{s \in S\}a_{sb} h_s \geq n_b \]
-\item Zudem kann der Gesamtverlust $v$ definiert werden als der Verlust $w_s$ pro Schnittmuster $s \in S$ multipliziert mit der Häufigkeit dieses Schnittmusters.
-\[ v = \sum\{s \in S\}w_s h_s  \] 
+\[ \sum\{s \in S\}a_{sb} h_s \geq n_b \] 
 \item Als letztes muss noch festgelegt werden, dass ein Schnittmuster $s$ nicht weniger als 0 mal vorkommen kann:
 \[ h_s \geq 0 \]
+\item Die insgesamt verwendete Anzahl an Papierrollen ergibt sich nun aus der Summe der verwendeten Schnittmuster:
+\[ p = \sum\{s \in S\}h_s \]
 \end{itemize}
-
-Nun kann man diese Formeln in den Simplex eintragen, wobei der Gesamtverlust $v$ möglichst minimiert werden soll: 
-\[ \min v \] 
+ 
