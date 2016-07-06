@@ -6,7 +6,7 @@ Man besitzt eine Eis-Firma, welche über den gesamten Verlauf des Jahres Eis pro
 \includegraphics[width=\textwidth]{Grafiken/Eiscreme.png}
 
 \raggedright
-Bei der Erstellung der Linearen Ungleichung muss nun folgendes beachtet werden:
+Bei der Erstellung des Linearen Problems muss nun folgendes beachtet werden:
 
 \begin{itemize}
 \item Die Änderung der Produktionsmenge von Monat A zu Monat B kostet 50€ pro Tonne.
@@ -17,24 +17,37 @@ Bei der Erstellung der Linearen Ungleichung muss nun folgendes beachtet werden:
 \end{itemize}
 
 Dies liefert folgende Bedingungen:
+\begin{align*}
+ \min: &\sum (1 \cdot p_m + 50 \cdot (ci_m + cd_m) + 20 \cdot l_m) \\
+ p_m + l_m &\geq n_m  \\
+ l_m &= p_{m-1} + l_{m-1} - n_{m-1} \\
+ \sum p_m &= \sum n_m \\
+ c_m &= p_{m} - p_{m-1} \\
+ c_m &= ci_m - cd_m \\
+ ci_m &\geq 0		\\
+ cd_m &\geq 0
+\end{align*}
+
+Im folgenden werden nun diese (Un)Gleichungen genauer erläutert:
+
 \begin{itemize}
 \item Für einen Monat $m$ in $M$, wobei $M = \{1, 2, \cdots, 12\}$ ist, muss die Produktionsmenge $p_m$, sowie die Menge der gelagerten Eiscreme $l_m$ größer als die Nachfrage $n_m$ sein:
 \[ p_m + l_m \geq n_m \]
-\item Die Menge des in einem Monat gelagerten Eis ist gleich der in vorherigen Monat übrig-gebliebenen Menge Eis:
+\item Die Menge des in einem Monat gelagerten Eis ist gleich der in vorherigen Monat übrig gebliebenen Menge Eis:
 \[ l_m = p_{m-1} + l_{m-1} - n_{m-1} \]
 \item Die insgesamt produzierte Menge an Eiscreme muss gleich der gesamten Nachfrage sein:
 \[ \sum p_m = \sum n_m \]
 \item Die Änderung der Produktionsmenge $c_m$ ergibt sich aus der Differenz der Produktionsmenge des Monates und des vorherigen Monates: 
 \[ c_m = p_{m} - p_{m-1} \] 
 	\begin{itemize}
-	\item Man muss hierbei beachten dass sowohl negative als auch positive Änderungen kosten! Da der Simplex-Algorithmus jedoch nur mit linearen Funktionen, d.h. ohne $\text{abs()}$ arbeiten kann, müssen zwei Hilfsvariablen, $cd_m$ und $ci_m$ (decrease und increase) aufgestellt werden:
+	\item Man muss hierbei beachten dass sowohl negative als auch positive Änderungen kosten! Da man innerhalb eines Linearen Problems jedoch nur mit linearen Funktionen, d.h. ohne $\text{abs()}$ arbeiten muss, müssen zwei Hilfsvariablen, $cd_m$ und $ci_m$ (decrease und increase) aufgestellt werden:
 	\begin{align*}
 	c_m &= ci_m - cd_m \\
 	ci_m &\geq 0		\\
 	cd_m &\geq 0
 	\end{align*}
 	
-	\item Die absolute Gesamtänderung der Produktionsrate kann nun mit $ci_m + cd_m$ errechnet werden. Da der Simplex-Algorithmus zudem versucht die Kosten gering zu halten, wird er auch $ci_m$ und $cd_m$ möglichst klein wählen, d.h. einer der beiden Variablen wird gleich 0 sein.
+	\item Die absolute Gesamtänderung der Produktionsrate kann nun mit $ci_m + cd_m$ errechnet werden.
  	\end{itemize}
 \end{itemize}
 
