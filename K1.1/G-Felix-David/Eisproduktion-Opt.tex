@@ -53,18 +53,3 @@ Im folgenden werden nun diese (Un)Gleichungen genauer erläutert:
 
 Zudem will man die Gesamtkosten minimieren, d.h. :
 \[ \min: \sum (1 \cdot p_m + 50 \cdot (ci_m + cd_m) + 20 \cdot l_m)\]
-
-Will man dies nun mithilfe eines Solvers lösen wollen, so würde eine mögliche Implementation der Bedingungen folgendermaßen aussehen:
-\newline
-
-min $\sum\{m~in~M\} ~ (1 \cdot p[m] + 50 \cdot (ci[m] + cd[m]) + 20 \cdot l[m])$ \\
-s.t. $\{m~in~M\} ~ p[m] + l[m] \geq n[m]$ \\
-s.t. $\{m~in~M\} ~ l[m] = p[m - 1] + l[m - 1] - n[m - 1]$ \\
-s.t. $\{m~in~M\} ~ \sum p[m] - n[m] = 0$ 	\\
-s.t. $\{m~in~M\} ~ c[m] = p[m] - p[m-1]$ 	\\
-s.t. $\{m~in~M\} ~ cd[m] \geq 0$			\\
-s.t. $\{m~in~M\} ~ ci[m] \geq 0$			\\
-s.t. $\{m~in~M\} ~ c[m] = ci[m] - cd[m]$	
-\newline
-
-solve;
