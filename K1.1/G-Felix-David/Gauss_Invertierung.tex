@@ -1,37 +1,36 @@
-Nebst seinen vielen Anwendungen zur Restrukturierung von Matrizen in eine Zeilen-Stufen-Form kann der Gauss-Algorithmus auch verwendet werden, um die Inverse einer quadratischen Matrix $M$ zu berechnen.
+Der Gauß-Algorithmus kann verwendet werden, um die Inverse einer quadratischen Matrix $M$ zu berechnen.
 Dies ist folgendermaßen möglich:
 
-\begin{itemize}
+\begin{enumerate}
 \item Man definiere zuerst eine neue Matrix $A$ folgendermaßen:
 $A = (M|E_m)$
-\item Diese neu definierte Matrix wird nun mithilfe des Gauss-Algorithmus so umgeformt, dass am Anfang der Matrix eine Einheitsmatrix $E_m$ steht.
-\begin{itemize}
+Dies bedeutet, dass an die Matrix $M$ eine Einheitsmatrix $E_m$ der Größe von $M$ von rechts angehängt wird. 
+\item Diese neu definierte Matrix wird nun mithilfe des Gauß-Algorithmus so umgeformt, dass am Anfang der Matrix eine Einheitsmatrix $E_m$ steht.
 \item Ist dies nicht möglich, so kann die Matrix $M$ nicht invertiert werden.
-\end{itemize}
-\item Die daraus folgende Matrix $A_{Ergebnis}$ ist nun folgendermaßen aufgebaut: $A_{Ergebnis} = (E_m|M^{-1})$
-\end{itemize}
-Entfernt man nun die ersten $m$ Spalten der Matrix $A_{Ergebnis}$, so ist die verbleibende Matrix gleich der Inversen der Matrix $M$, d.h. $M^{-1}$
+\item Die daraus folgende Matrix $A$ ist nun folgendermaßen aufgebaut: \[ A = (E_m|M^{-1}) \]
+\end{enumerate}
 
 \begin{proof}
-Um eine Matrix $M$ in die ZSF zu brigen, wendet der Gauss-Algorithmus eine Verkettung von Elementarmatrizen $(E_1 \cdots E_k)$ an.
+Um eine Matrix $M$ in die Form $(E_m|B)$ zu bringen, wendet der Gauß-Algorithmus ein Produkt von Elementarmatrizen $(E_k \cdots E_1)$ an.
 
-Zudem liefert der Gauss-Algorithmus bei der Umformung von $(M|E_m)$ die Matrix $(E_m|B)$, d.h.: 
-\begin{eqnarray*}
- (E_1 \cdots E_k) \cdot (M|E_m) &=& (E_m|B) \\
- \Leftrightarrow 
- ((E_1 \cdots E_k) \cdot A | (E_1 \cdots E_k)) &=& (E_m|B)
-\end{eqnarray*}
+Zudem liefert der Gauß-Algorithmus bei der Umformung von $(M|E_m)$ die Matrix $(E_m|B)$, d.h.: 
+\begin{align*}
+  (E_m|B) &= (E_k \cdots E_1) \cdot (M|E_m)\\ 
+  (E_m|B) &= ((E_k \cdots E_1) \cdot M | (E_k \cdots E_1))
+\end{align*}
 
-Diese Formel lässt sich nun wie folgt aufspalten:
-\begin{eqnarray*}
- (E_1 \cdots E_k) &=& B \\
-(E_1 \cdots E_k) \cdot A &=& E_m
-\end{eqnarray*}
+Es lässt sich nun wie folgt ab lesen:
+\begin{align*}
+ (E_k \cdots E_1) &= B \\
+(E_k \cdots E_1) \cdot M &= E_m
+\end{align*}
 
-Durch Ersetzung von $(E_1\cdots E_k)$ mit $B$, da diese Ausdrücke äquivalent sind (siehe oben), erhält man:
-\[ B\cdot A = E_m \]
+Da nun laut obiger Formel $(E_k \cdots E_1) = B$ gilt, lässt sich nun in der zweiten Formel $(E_k \cdots E_1)$ durch $B$ ersetzten. Hieraus erhält man:
+\[ B\cdot M = E_m \]
 
-Da dies jedoch äquivalent ist zur Definition der Inverse einer Matrix gilt:
-\[ B=A^{-1}\]
+Da dies jedoch äquivalent ist zur Definition der Inverse einer Matrix, gilt:
+\[ B=M^{-1}\]
+
+\textbf{TODODODO}
 
 \end{proof}
