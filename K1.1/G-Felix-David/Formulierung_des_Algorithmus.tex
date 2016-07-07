@@ -1,21 +1,20 @@
 \subsubsection{Der Gauß-Algorithmus allgemein formuliert}
-Der Gauß-Algorithmus ist eine Reihe von Anweisungen welche nacheinander ausgeführt werden können um eine beliebige Matrix in Zeilenstufenform zu bringen.
 \begin{Algo}[Gauß-Algorithmus]
-
+	Hier wird der Gauß-Algorithmus in seiner allgemeinen Form definiert und er kann so zb. im Computer umgesetzt werden.
 	\begin{description}
 		\item[Eingabe:] $m \times n $-Matrix $A$ , $a_j$ sei die $j$-te Spalte von $A$
 		\item[Ausgabe:] $\tilde{A}$ in Zeilenstufenform (ZSF)
 	\end{description}
 	
 	\begin{enumerate}
-		\item Zuerst wird geprüft ob die Matrix leer ist also ob $A=0$. Ist dies der Fal,l so ist $A$ bereits in ZSF.
+		\item Zuerst wird geprüft ob die Matrix leer ist also ob $A=0$. Ist dies der Fall so ist $A$ bereits in ZSF.
 		\item Nun wird die Zählvariable $j$ auf $j=1$ gesetzt.
 		\item Wenn die $j$-te Spalte leer ist also $a_j=0$ dann wird $j$ um eins erhöht $j+1\rightarrow j$ und dieser Schritt wiederholt.
-		\item $k$ wird definiert als der Index des ersten Eintrags in der $j$-ten Spalte welcher ungleich Null ist $k:=\min\{i|a_{ij}\neq0\}$.
+		\item $k$ wird definiert als der Index des ersten Eintrags in der $j$-ten Spalte welcher ungleich Null d.h. $k:=\min\{i|a_{ij}\neq0\}$.
 		\item Ist nun $k\neq1$ so muss die $k$-te Zeile mit der ersten vertauscht werden um im nächsten Schritt fortzufahren zu können.
 		\item Da $k\neq0$ gilt ist es nun möglich dank der Zeilenaddition und dem Faktor $\lambda=\frac{-a_{ij}}{\bar{a}_{1j}}$ alle Einträge unter $a_1j$ in den Zeilen $2\leq{i}\leq{m}$ durch Multiplikation mit $Q_i^1(\lambda)$ zu eliminieren.
 		\item Hiernach werden die Schritte 1 bis 6 mit der Untermatrix $A_2:=(a_{pq})_{\substack{2\leq p\leq m\\ j+1 \leq q \leq n}}$ wiederholt solange $m>1$
-		\item $A$ ist in ZSF 
+		\item $A$ ist in ZSF. 
 	\end{enumerate}
 \end{Algo}
 \subsubsection{Terminierung des Gauß-Algorithmus}
