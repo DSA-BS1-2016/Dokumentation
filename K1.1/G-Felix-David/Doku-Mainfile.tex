@@ -40,7 +40,7 @@
 Die Zeilenstufenform (ZSF) einer Matrix $M$ liegt vor, wenn folgende Bedingungen erfüllt sind:
 \begin{itemize}
 \item Alle Null-Zeilen liegen unter den Nicht-Null-Zeilen. Die Anzahl aller Nicht-Null-Zeilen wird $r$ genannt.
-\item Das erste Element einer Zeile welches $\neq 0$ ist, genannt Pivot-Element, liegt mindestens eine Spalte weiter rechts als das Pivot-Element der darüber liegenden Zeile. Genauer gesagt: 
+\item Das erste Element einer Zeile welches $\neq 0$ ist, genannt Pivot-Element, liegt mindestens eine Spalte weiter rechts als das Pivot-Element der darüber liegenden Zeile: 
 \begin{align*}
 	j(i) & = min\{j: a_{ji} \neq 0 \} \\
 	j(1) & > j(2) > \cdots > j(r)
@@ -52,8 +52,7 @@ Eine Matrix in Zeilenstufenform sieht folgendermaßen aus:
 \[ \begin{pmatrix}{\color{red}1}
 & 2 & 3 & 4\\ 
 0 &{\color{red}6}& 7 & 8  \\ 
-0 & 0 & 0 &{\color{red}5} \\ 
-0 &0& 0 & 0\\ 
+0 & 0 & 0 &{\color{red}5}
 \end{pmatrix} \]
 (Pivot-Elemente sind hier erneut in Rot dargestellt.)
 
