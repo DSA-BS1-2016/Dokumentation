@@ -1,13 +1,13 @@
-Der Gauß-Algorithmus kann verwendet werden, um die Inverse einer quadratischen Matrix $M$ zu berechnen.
+Der Gauß-Algorithmus kann verwendet werden, um die Inverse einer Matrix $M = m \times m$ zu berechnen.
 Dies ist folgendermaßen möglich:
 
 \begin{enumerate}
 \item Man definiere zuerst eine neue Matrix $A$ folgendermaßen:
 $A = (M|E_m)$
 Dies bedeutet, dass an die Matrix $M$ eine Einheitsmatrix $E_m$ der Größe von $M$ von rechts angehängt wird. 
-\item Diese neu definierte Matrix wird nun mithilfe des Gauß-Algorithmus so umgeformt, dass am Anfang der Matrix eine Einheitsmatrix $E_m$ steht.
+\item Diese Matrix $A$ wird nun mithilfe des Gauß-Algorithmus so umgeformt, dass am Anfang der Matrix eine Einheitsmatrix $E_m$ steht.
 \item Ist dies nicht möglich, so kann die Matrix $M$ nicht invertiert werden.
-\item Die daraus folgende Matrix $A$ ist nun folgendermaßen aufgebaut: \[ A = (E_m|M^{-1}) \]
+\item Die resultierende Matrix ist nun folgendermaßen aufgebaut: \[ A = (E_m|M^{-1}) \]
 \end{enumerate}
 
 \begin{Them}
@@ -23,7 +23,7 @@ Zudem liefert der Gauß-Algorithmus bei der Umformung von $(M|E_m)$ die Matrix $
   (E_m|B) &= ((E_k \cdots E_1) \cdot M | (E_k \cdots E_1))
 \end{align*}
 
-Es lässt sich nun wie folgt ab lesen:
+Es lässt sich nun wie folgt ablesen:
 \begin{align*}
  (E_k \cdots E_1) &= B \\
 (E_k \cdots E_1) \cdot M &= E_m
