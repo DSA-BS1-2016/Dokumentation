@@ -1,16 +1,57 @@
-	In dem gestellten Problem geht es darum ein Fluss von Daten von Eingang $o$ zu Ausgang $n$ über die Knoten $a$ bis $d$ größtmöglich zu gestalten unter Beachtung verschiedener Bedingungen.  Jeder Knoten hat nur Verbindungen zu bestimmten anderen Knoten bzw. Eingang und Ausgang wobei sie selbst nichts zwischenspeichern können. Diese Verbindungen können nur in eine Richtung benutzt werden und haben eine Höchstflussrate welche nicht überschritten werden darf.
+	In dem gestellten Problem geht es darum ein Fluss von Daten von Eingang $o$ zu Ausgang $n$ über die Knoten $a$ bis $d$ größtmöglich zu gestalten unter Beachtung verschiedener Bedingungen.  Jeder Knoten hat nur Verbindungen zu bestimmten anderen Knoten bzw. Eingang und Ausgang wobei sie selbst nichts zwischenspeichern können. Diese Verbindungen können nur in eine Richtung benutzt werden und haben eine Höchstflussrate $k_{ij}$ wobei $i$ und $j$ zwei verbundene Knoten sind, welche nicht überschritten werden darf.
 	\includegraphics*[width=\textwidth]{Grafiken/Netzwerkflussbild.png}
-	Also versuchen wir den Fluss zum letzten Knoten $o$ zu maximieren.Hierzu definieren wir $f_ij$ als der tatsächliche Fluss zwischen den Knoten $i$ und $j$.
-	\[ \max(f_{do}+f_{eo}) \]
-	Um die maximale Kapazität der Verbindungen zu beachten werden folgende Ungleichungen eingeführt.Hierbei sind $i$ und $j$ zwei Knoten zwischen denen eine Verbindung besteht. $k_{ij}$ beschreibt die maximale Kapazität und $f_{ij}$ den tatsächlichen Fluss. Daraus ergibt sich für alle möglichen zulässigen $i$ und $j$:  
-	\begin{align*}
-		-k_{ij} \leq f_{ij} \leq k_{ij}
-	\end{align*}
-	Dabei gelten die Nebenbedingungen das der Fluss von einem Knoten genauso groß sein muss wie der Fluss von dem Knoten weg. Die Flussrichtung wird mit Vorzeichen berücksichtigt. Hierbei ist $x$ ein beliebiger Knoten und $j$ alle Knoten mit denen er verbindet.
-	\[
-	0=\sum_{j=1}^{j_{max}{f_{xj}}
-	\]
-	Wird dieses Lineare Programm gelöst so erhält man einen maximalen Fluss. 
+	
+	Insgesamt stellen wir folgendes lineare Programm auf welches gelöst werden kann um den maximalen Fluss zu erhalten.
+	
+\begin{alignat*}{3}
+	\text{Maximiere }  	  f_{do}+f_{eo}  & \\
+	\text{sodass }  f_{an}+f_{ab}+f_{ad}=0&\\
+				f_{bn}+f_{ba}+f_{be}=0\\
+				f_{cn}+f_{cd}+f_{ce}=0&\\
+				f_{da}+f_{dc}+f_{do}=0&\\
+				f_{eb}+f_{ec}+f_{eo}=0&\\
+					-3\leq f_{na} \leq 3&\\
+					-1\leq f_{nb} \leq 1&\\
+					-1\leq f_{nc} \leq 1&\\
+					-1\leq f_{ab} \leq 1&\\
+					-1\leq f_{ad} \leq 1&\\
+					-3\leq f_{be} \leq 3&\\
+					-4\leq f_{cd} \leq 4&\\
+					-4\leq f_{ce} \leq 4&\\
+					-1\leq f_{eo} \leq 1&\\
+					-4\leq f_{de} \leq 4&
+\end{alignat*}
+	
+	Die Zielfunktion $f_{do}+f_{eo}$ wird optimiert und ist der gesamte Fluss zum Ausgangsknoten. Die Flüsse zu und von den Knoten müssen insgesamt Null sein wie die erste Gruppe an Gleichungen besagt da die Knoten nichts speichern können. Außerdem sollt der Fluss über eine Verbindung ihre Höchstkapazität nicht überschreiten.
+	
+	
+	%Um die maximale Kapazität der Verbindungen zu beachten werden folgende Ungleichungen eingeführt.Hierbei sind $i$ und $j$ zwei Knoten zwischen denen eine Verbindung besteht. $k_{ij}$ beschreibt die maximale Kapazität und $f_{ij}$ den tatsächlichen Fluss. Daraus ergibt sich für alle möglichen zulässigen $i$ und $j$:  
+%	\begin{align*}
+%		-k_{ij} \leq f_{ij} \leq k_{ij}
+%	\end{align*}
+%	Dabei gelten die Nebenbedingungen das der Fluss von einem Knoten genauso groß sein muss wie der Fluss von dem Knoten weg. Die Flussrichtung wird mit Vorzeichen berücksichtigt. Diese Ungleichungen drücken dies aus.
+%	\begin{align*}
+%	a_n+a_b+a_d=0\\
+%	b_n+b_a+b_e=0\\
+%	c_n+c_d+c_e=0\\
+%	d_a+d_c+d_o=0\\
+%	e_b+e_c+e_o=0
+%	\end{align*}	
+	
+%	Außerdem darf der Fluss $f_{ij}$ einer Verbindung ihre Kapazität $k_{ij}$ nicht überschreiten. Konkret erhält man die Ungleichungen:
+%	\begin{align*}
+%		-3\leq f_{na} \leq 3\\
+%%		-1\leq f_{nb} \leq 1\\
+%		-1\leq f_{nc} \leq 1\\
+%		-1\leq f_{ab} \leq 1\\
+%		-1\leq f_{ad} \leq 1\\
+%		-3\leq f_{be} \leq 3\\
+%		-4\leq f_{cd} \leq 4\\
+%		-4\leq f_{ce} \leq 4\\
+%		-1\leq f_{eo} \leq 1\\
+%		-4\leq f_{de} \leq 4
+%	\end{align*}
+%	Wird dieses Lineare Programm gelöst so erhält man einen maximalen Fluss.% 
 	
 	
 	
